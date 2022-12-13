@@ -20,11 +20,4 @@
 # The middle character(s) of the word represented as a string.
 
 def get_middle(s):
-    print(len(s))
-    if len(s) // 2 == 0:
-        return 'it is even'
-    else:
-        return 'it is odd'
-
-middle_char = get_middle('cover')
-print(middle_char)
+    if
