@@ -28,3 +28,15 @@ def get_middle(s):
 
 middle_char = get_middle('task')
 print(middle_char)
+
+# CW Solution
+# def get_middle(s):
+#     index, odd = divmod(len(s), 2)
+#     # print("index and odd", index, odd)
+#     return s[index] if odd else s[index - 1:index + 1]
+
+
+# middle_char = get_middle('task')
+# print(middle_char)
+
+# print(divmod(9, 6)) # returns 1, 3
