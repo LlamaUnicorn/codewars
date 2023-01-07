@@ -1,8 +1,8 @@
 def translate():
     pass
 
-def splitter_():
-    pass
+def splitter_(inp):
+    to_str = str(inp)
 
 dict_2 = {222: "c",
           22: "b",
