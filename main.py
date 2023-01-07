@@ -1,42 +1,19 @@
-# https://www.codewars.com/kata/56747fd5cb988479af000028
+def translate():
+    pass
 
-# You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+def splitter_():
+    pass
 
-# #Examples:
+dict_2 = {222: "c",
+          22: "b",
+          2: "a",
+          333: "f",
+          33: "e",
+          3: "d"
+         }
 
-# Kata.getMiddle("test") should return "es"
+test = 223
 
-# Kata.getMiddle("testing") should return "t"
-
-# Kata.getMiddle("middle") should return "dd"
-
-# Kata.getMiddle("A") should return "A"
-# #Input
-
-# A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
-
-# #Output
-
-# The middle character(s) of the word represented as a string.
-
-def get_middle(s):
-    mid_char = int(len(s)/2)
-    if len(s) % 2 == 0:
-        return s[mid_char-1] + s[mid_char]
-    else:
-        return s[mid_char]
-
-middle_char = get_middle('task')
-print(middle_char)
-
-# CW Solution
-# def get_middle(s):
-#     index, odd = divmod(len(s), 2)
-#     # print("index and odd", index, odd)
-#     return s[index] if odd else s[index - 1:index + 1]
-
-
-# middle_char = get_middle('task')
-# print(middle_char)
-
-# print(divmod(9, 6)) # returns 1, 3
+if test in dict_2:
+    print(dict_2[test])
+    
