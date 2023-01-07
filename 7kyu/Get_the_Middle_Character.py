@@ -20,4 +20,23 @@
 # The middle character(s) of the word represented as a string.
 
 def get_middle(s):
-    if
+    mid_char = int(len(s)/2)
+    if len(s) % 2 == 0:
+        return s[mid_char-1] + s[mid_char]
+    else:
+        return s[mid_char]
+
+middle_char = get_middle('task')
+print(middle_char)
+
+# CW Solution
+# def get_middle(s):
+#     index, odd = divmod(len(s), 2)
+#     # print("index and odd", index, odd)
+#     return s[index] if odd else s[index - 1:index + 1]
+
+
+# middle_char = get_middle('task')
+# print(middle_char)
+
+# print(divmod(9, 6)) # returns 1, 3
