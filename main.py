@@ -1,4 +1,5 @@
-# TODO: Get the letter from string
+# DONE: Get the letter from string
+# TODO: Split the input into two letters
 # TODO: Get the longest letter from string
 # TODO: Transform the number to the letter with the maximum value
 #         "777777" -->  "sq"` and `"7717777" --> "qs"`
