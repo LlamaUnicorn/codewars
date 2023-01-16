@@ -1,7 +1,7 @@
 # .replit setup
 ```
 language = "python3"
-run = "python 8kyu/'Convert a Number to a String'.py"
+run = "python main.py"
 ```
-# codewars
-# tiny update and other thing
+# solving challenges on codewars
+
