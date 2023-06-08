@@ -1,4 +1,6 @@
-#!/home/runner/Python/venv/bin/python3
+#!/bin/sh
+'''exec' "/home/dave/VS code projects/codewars/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
