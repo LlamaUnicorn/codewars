@@ -1,10 +1,6 @@
-def filter_list(l):
-    print(f'{l=}')
-    'return a new list with the strings filtered out'
-    for i in l:
-        print(f'{i=}')
-        if type(i) != int:
-            print(i)
-            l.remove(i)
-    print(f'{l=}')
-    return l
+def remove_smallest(numbers):
+    return numbers.remove(min(numbers))
+
+
+numbers = [1,2,3,4,5]
+print(remove_smallest(numbers))
