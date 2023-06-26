@@ -1,5 +1,6 @@
 def remove_smallest(numbers):
-    return numbers.remove(min(numbers))
+    new_numbers = numbers.copy()
+    return new_numbers.remove(min(numbers))
 
 
 numbers = [1,2,3,4,5]
