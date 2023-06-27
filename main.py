@@ -1,8 +1,9 @@
-from copy import deepcopy
-
 def remove_smallest(numbers):
-    new_numbers = deepcopy(numbers)
-    return new_numbers.remove(min(new_numbers))
+    removed_minimum = [
+        i for i in numbers
+        if i > min(numbers)
+    ]
+    return [] if numbers == [] else removed_minimum
 
 
 numbers = [1,2,3,4,5]
