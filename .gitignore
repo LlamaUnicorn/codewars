@@ -1761,3 +1761,9 @@ venv/lib/python3.11/site-packages/pytest-7.4.0.dist-info/WHEEL
 7kyu/__pycache__/head_tail_init_and_last.cpython-311.pyc
 7kyu/tests/__pycache__/7_head_tail_init_and_last_test.cpython-311-pytest-7.4.0.pyc
 7kyu/tests/__pycache__/head_tail_init_and_last_test.cpython-311-pytest-7.4.0.pyc
+/.idea/.gitignore
+/.idea/codewars.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
