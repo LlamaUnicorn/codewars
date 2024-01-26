@@ -1,7 +1,7 @@
 import os
 import sys
 from hypothesis import given, example, strategies as st
-from hypothesis.strategies import just
+from hypothesis.strategies import just, text
 
 from Strings.q7_vowel_count import get_count
 
@@ -14,28 +14,15 @@ def test_all_vowels_get_count(words):
     assert result == 5, f"Incorrect answer for \"aeiou\""
 
 
-#     assert all(len(word) > i for i, word in enumerate(words)) or result == ''
-#     assert all(word[i] == result[i] for i, word in enumerate(words) if len(word) > i)
-#
-#
-# @given(st.lists(st.text(), max_size=0))
-# @example([])
-# def test_empty_get_count(words):
-#     assert get_count(words) == ''
-#
-#
-# @given(st.lists(st.text(min_size=1), min_size=1, max_size=1))
-# @example(['X-ray'])
-# def test_dash_word_get_count(words):
-#     assert get_count(words) == words[0][0]
+@given(just('y'))
+def test_no_vowels_get_count(words):
+    result = get_count(words)
+    assert result == 0, f"Incorrect answer for \"y\""
 
-# def test_get_count():
-#     assert get_count(['yoda', 'best', 'has']) == 'yes'
-#
-#
-# def test_empty_get_count():
-#     assert get_count([]) == ''
-#
-#
-# def test_dash_word_get_count():
-#     assert get_count(['X-ray']) == 'X'
+
+@given(text())
+def test_generated_get_count(words):
+    result = get_count(words)
+    expected = sum(1 for char in words if char in 'aeiou')
+    assert result == expected, f"Incorrect answer for \"generator\""
+
