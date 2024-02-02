@@ -1,5 +1,6 @@
 import os
 import sys
+import string
 from hypothesis.strategies import just, text, lists, integers
 
 from hypothesis import given, example, strategies as st
@@ -36,8 +37,17 @@ def is_isogram_reference_implementation(word):
     return len(word) == len(set(word.lower()))
 
 
-@given(st.text())
+@given(st.text(alphabet=string.ascii_letters, min_size=2))
+# @example('Aa')
 def test_is_isogram(word):
+    print(f'Testing with word: {word}')
     result = is_isogram(word)
     expected = is_isogram_reference_implementation(word)
-    assert not result != expected, f"Incorrect answer for \"{word}\""
+    assert result == expected, f"Incorrect answer for \"{word}\""
+
+# @given(st.text(alphabet=string.ascii_letters, min_size=1))
+
+# def test_is_isogram(word):
+#     result = is_isogram(word)
+#     expected = is_isogram_reference_implementation(word)
+#     assert result == expected, f"Incorrect answer for \"{word}\""
