@@ -3,9 +3,7 @@ import sys
 from hypothesis import given, example, strategies as st
 from hypothesis.strategies import just, text
 
-from Strings.q7_vowel_count import get_count
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from q7_vowel_count import get_count
 
 
 @given(just('aeiou'))

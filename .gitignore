@@ -2,4 +2,5 @@ venv/
 7kyu/__pycache__/
 7kyu/tests/__pycache__/
 /.idea/
-/Strings/tests/.hypothesis/
+/strings/.hypothesis/
+/.hypothesis/

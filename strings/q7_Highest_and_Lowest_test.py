@@ -1,12 +1,6 @@
-import os
-import sys
 from hypothesis.strategies import just, text, lists, integers
-
 from hypothesis import given, example, strategies as st
-
-from Strings.q7_Highest_and_Lowest import high_and_low
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from q7_Highest_and_Lowest import high_and_low
 
 
 @given(just('8 3 -5 42 -1 0 0 -9 4 7 4 -4'))

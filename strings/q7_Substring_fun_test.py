@@ -2,7 +2,7 @@ import os
 import sys
 from hypothesis import given, example, strategies as st
 
-from Strings.q7_Substring_fun import nth_char
+from q7_Substring_fun import nth_char
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
