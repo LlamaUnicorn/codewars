@@ -4,9 +4,17 @@
 # "ATTGC" --> "TAACG"
 # "GTAT" --> "CATA"
 
+cases = {
+    'A': 'T',
+    'T': 'A',
+    'C': 'G',
+    'G': 'C',
+}
+
 
 def dna_strand(dna):
-    ...
+    result = ''.join(cases[letter] for letter in dna)
+    return result
 
 
 print(dna_strand('ATTGC'))
