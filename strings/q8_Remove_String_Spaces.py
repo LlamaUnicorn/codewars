@@ -9,4 +9,8 @@
 
 
 def no_space(x):
-    #your code here
+    # return ''.join([x.strip() for x in x.split(' ') if x != ""])
+    return ''.join([x.strip() for x in x.split(' ')])
+
+
+print(no_space("Hello World"))

@@ -17,12 +17,16 @@
 
 # return masked string
 def maskify(cc):
-    if cc == '':
-        return ''
-    elif len(cc) < 4:
-        return cc
-    else:
-        return len(cc[:-4]) * '#' + cc[-4:]
+    return cc if len(cc) < 4 else '#' * len(cc[:-4]) + cc[-4:]
+    # if cc == '':
+    #     return ''
+    # elif len(cc) < 4:
+    #     return cc
+    # else:
+    #     return len(cc[:-4]) * '#' + cc[-4:]
 
 
 print(maskify('4556364607935616'))
+
+# def maskify(cc):
+#     return "#"*(len(cc)-4) + cc[-4:]
