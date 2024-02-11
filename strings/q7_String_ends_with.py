@@ -1,6 +1,5 @@
 def solution(text, ending):
-    # your code here...
-    pass
+    return text.endswith(ending)
 
 
 print(solution('abc', 'bc'))
