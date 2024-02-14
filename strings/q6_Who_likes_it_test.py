@@ -1,6 +1,5 @@
 from q6_Who_likes_it import likes
 
-
 # def likes(names):
 #     match names:
 #         case []:
@@ -21,6 +20,8 @@ test_cases = {
     ("Jacob", "Alex"): "Jacob and Alex like this",
     ("Max", "John", "Mark"): "Max, John and Mark like this",
     ("Alex", "Jacob", "Mark", "Max"): "Alex, Jacob and 2 others like this",
+    ('Brian J. Mason', 'Nene Romanova', 'Galatea', 'Sylia Stingray', 'Largo', 'Anri', 'Priscilla S. Asagiri',
+     'Macky Stingray', 'Nigel', 'Sylvie', 'Linna Yamazaki'): "Brian J. Mason, Nene Romanova and 9 others like this",
 }
 
 

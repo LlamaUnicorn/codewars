@@ -24,11 +24,21 @@ def likes(names):
             return f'{name1} and {name2} like this'
         case [name1, name2, name3]:
             return f'{name1}, {name2} and {name3} like this'
-        case [name1, name2, name3, name4]:
+        case [name1, name2, *args]:
             num_likes = len(names)-2
             return f'{name1}, {name2} and {num_likes} others like this'
-        case _:
-            return 'error'
 
 
-print(likes('Peter'))
+print(likes(['Brian J. Mason', 'Nene Romanova', 'Galatea', 'Sylia Stingray', 'Largo', 'Anri', 'Priscilla S. Asagiri',
+     'Macky Stingray', 'Nigel', 'Sylvie', 'Linna Yamazaki']))
+
+
+# def likes(names):
+#     n = len(names)
+#     return {
+#         0: 'no one likes this',
+#         1: '{} likes this',
+#         2: '{} and {} like this',
+#         3: '{}, {} and {} like this',
+#         4: '{}, {} and {others} others like this'
+#     }[min(4, n)].format(*names[:3], others=n-2)
