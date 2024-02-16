@@ -13,22 +13,27 @@
 # "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 
+# def duplicate_count(text):
+#     result = 0
+#     text = text.lower()
+#     counting_dict = dict()
+#     for char in text:
+#         if char not in counting_dict:
+#             counting_dict[char] = 1
+#         else:
+#             counting_dict[char] += 1
+#     for v in counting_dict.values():
+#         if v > 1:
+#             result += 1
+#     return result
+
 def duplicate_count(text):
     result = 0
     text = text.lower()
-    counting_dict = dict()
     for char in text:
-        if char not in counting_dict:
-            counting_dict[char] = 1
-        else:
-            counting_dict[char] += 1
-    for k, v in counting_dict.items():
-        if v > 1:
+        if text.count(char) > 1:
             result += 1
-    # for char in text:
-    #     if text.count(char) > 1:
-    #         result += 1
-    #         text = text.replace(char, '')
+            text = text.replace(char, '')
     return result
 
 
