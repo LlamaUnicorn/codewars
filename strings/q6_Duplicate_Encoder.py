@@ -12,14 +12,35 @@
 # If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
 
+# def duplicate_encode(word):
+#     word = word.lower()
+#     new_word = ''
+#     for char in word:
+#         if word.count(char) > 1:
+#             new_word += ')'
+#         else:
+#             new_word += '('
+#     return new_word
+
 def duplicate_encode(word):
     word = word.lower()
+    char_count = dict()
+    result = ''
     for char in word:
-        if word.count(char) > 1:
-            word = word.replace(char, ')')
+        if char in char_count:
+            char_count[char] += 1
         else:
-            word = word.replace(char, '(')
-    return word
+            char_count[char] = 1
+    for char in word:
+        if char_count[char] == 1:
+            result += '('
+        else:
+            result += ')'
+    return result
 
 
-print(duplicate_encode('))))))'))
+print(duplicate_encode('recede'))
+
+
+# def duplicate_encode(word):
+#     return "".join(["(" if word.lower().count(c) == 1 else ")" for c in word.lower()])
