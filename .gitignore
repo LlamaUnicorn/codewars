@@ -4,3 +4,4 @@ venv/
 /.idea/
 /strings/.hypothesis/
 /.hypothesis/
+/arrays/.hypothesis/
