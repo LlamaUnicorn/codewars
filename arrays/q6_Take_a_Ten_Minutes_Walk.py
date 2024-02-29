@@ -11,8 +11,20 @@
 
 
 def is_valid_walk(walk):
-    #determine if walk is valid
-    pass
+    # return True if tuple(map(sum, zip((1, 0), (-1, 1)))) and len(walk) == 10 else False
+    # return True if tuple(map(sum, zip(walk))) and len(walk) == 10 else False
+    directions_dict = {
+        'n': (1, 0),
+        's': (-1, 0),
+        'e': (0, -1),
+        'w': (0, 1),
+    }
+    res = (0, 0)
+    for i in walk:
+        res = (res[0] + directions_dict[i][0], res[1] + directions_dict[i][1])
+    return True if res == (0, 0) and len(walk) == 10 else False
 
 
-print(is_valid_walk())
+print(is_valid_walk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']))
+
+# return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
