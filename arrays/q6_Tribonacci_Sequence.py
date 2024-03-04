@@ -20,15 +20,10 @@
 
 
 def tribonacci(signature, n):
-    a, b, c = signature
-    if a > b > c:
-        return []
-    result = [a, b, c]
+    result = signature[:n]
     for i in range(n - 3):
-        lst = result[-3::]
-        a, b, c = lst
-        new_sum = a + b + c
-        result.append(new_sum)
+        lst = sum(result[-3::])
+        result.append(lst)
     return result
 
 
@@ -36,3 +31,7 @@ print(tribonacci([1, 1, 1], 10))
 
 lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(lst[-3::])
+
+# res = signature[:n]
+# for i in range(n - 3): res.append(sum(res[-3:]))
+# return res
