@@ -24,20 +24,24 @@ def high(x):
         'z': 26
     }
 
-    max_score = 0
     top_word = ''
+    max_score = 0
     word_score = 0
-    x = x.split(' ')
-    print(x)
+    x = x.split()
     for word in x:
-        print(word)
-        if word == ' ':
-            continue
         for letter in word:
             word_score += letter_scores[letter]
         if word_score > max_score:
+            max_score = word_score
             top_word = word
+        word_score = 0
+
     return top_word
 
 
+# print(high('man i need a taxi up to ubud'))
 print(high('man i need a taxi up to ubud'))
+
+
+# def high(x):
+#     return max(x.split(), key=lambda word: sum(ord(char) - 96 for char in word))

@@ -9,7 +9,7 @@ from q6_Highest_Scoring_Word import high
 test_cases = {
     'man i need a taxi up to ubud': 'taxi',
     'what time are we climbing up the volcano': 'volcano',
-    'b aa': 'aa',
+    'b aa': 'b',
 }
 
 

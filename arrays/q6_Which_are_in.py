@@ -22,8 +22,19 @@
 
 
 def in_array(array1, array2):
-    # your code
-    return []
+    result = []
+    for part in array1:
+        for word in array2:
+            if part in word:
+                result.append(part)
+    return list(sorted(set(result)))
 
 
 print(in_array(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]))
+
+
+# return sorted(set([word for word in array1 for word_2 in array2 if word in word_2]))
+
+
+# def in_array(a1, a2):
+#     return sorted(set(s1 for s1 in a1 if any(s1 in s2 for s2 in a2)))
