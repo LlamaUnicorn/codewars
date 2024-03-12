@@ -1,8 +1,8 @@
 from q6_The_Supermarket_Queue import queue_time
 
 test_cases = {
-    (tuple([5, 3, 4]), 1): [2],
-    (tuple([10, 2, 3, 3]), 2): [1, 3],
+    (tuple([5, 3, 4]), 1): 12,
+    (tuple([10, 2, 3, 3]), 2): 10,
 }
 
 

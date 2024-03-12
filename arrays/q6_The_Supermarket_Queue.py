@@ -31,10 +31,8 @@ def queue_time(customers, n):
     time = 0
     tills = [0] * n
     for customer in customers:
-        tills[0] += customer
-        tills.sort()
-        time = max(time, tills[0])
-    return time
+        tills[tills.index(min(tills))] += customer
+    return max(tills)
 
 
 # print(queue_time([5, 3, 4], 1))
