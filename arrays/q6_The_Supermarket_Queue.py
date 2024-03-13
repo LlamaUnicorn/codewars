@@ -28,7 +28,6 @@
 
 
 def queue_time(customers, n):
-    time = 0
     tills = [0] * n
     for customer in customers:
         tills[tills.index(min(tills))] += customer
