@@ -20,7 +20,15 @@ def decrypt(encrypted_text, n):
 
 
 def encrypt(text, n):
-    pass
+    if n == 0 or not text:
+        return text
+
+    odd = [x for i, x in enumerate(text) if i % 2 != 0]
+    even = [x for i, x in enumerate(text) if i % 2 == 0]
+    result = "".join(odd + even)
+
+    return encrypt(result, n - 1)
 
 
 print(encrypt("012345", 1))
+print(encrypt("012345", 2))
