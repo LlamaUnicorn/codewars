@@ -16,11 +16,26 @@
 
 
 def decrypt(encrypted_text, n):
-    pass
+    if n == 0 or n < 0 or not encrypted_text:
+        return encrypted_text
+
+    half = len(encrypted_text) // 2
+    odd = encrypted_text[:half]
+    print(odd)
+    even = encrypted_text[half:]
+    print(even)
+    result = "".join([odd + even])
+    combined = list(zip(even, odd))
+    print(combined)
+    flattened = [item for pair in combined for item in pair]
+    print(''.join(flattened))
+    return decrypt(result, n - 1)
+
+
 
 
 def encrypt(text, n):
-    if n == 0 or not text:
+    if n == 0 or n < 0 or not text:
         return text
 
     odd = [x for i, x in enumerate(text) if i % 2 != 0]
@@ -30,5 +45,7 @@ def encrypt(text, n):
     return encrypt(result, n - 1)
 
 
-print(encrypt("012345", 1))
-print(encrypt("012345", 2))
+# print(encrypt("012345", 1))
+# print(encrypt("012345", 2))
+print(decrypt("hsi  etTi sats!", 1))
+print(decrypt("s eT ashi tist!", 2))
