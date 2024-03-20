@@ -21,17 +21,17 @@ def decrypt(encrypted_text, n):
 
     half = len(encrypted_text) // 2
     odd = encrypted_text[:half]
-    print(odd)
+    print('odd', odd)
     even = encrypted_text[half:]
-    print(even)
-    result = "".join([odd + even])
+    print('even', even)
     combined = list(zip(even, odd))
-    print(combined)
+    if len(even) > len(odd):
+        combined.append(even[-1])
+    print('combined', combined)
     flattened = [item for pair in combined for item in pair]
-    print(''.join(flattened))
-    return decrypt(result, n - 1)
-
-
+    encrypted_text = "".join(flattened)
+    print('flattened', encrypted_text)
+    return decrypt(encrypted_text, n - 1)
 
 
 def encrypt(text, n):
@@ -45,7 +45,11 @@ def encrypt(text, n):
     return encrypt(result, n - 1)
 
 
+encrypt('JK>~~pyb#}iI{T_AR_', 993)
+
+# print(decrypt("hsi  etTi sats!", 1))
+# print(decrypt("s eT ashi tist!", 2))
+# print(decrypt("135024!", 1))
+# print(decrypt("304152", 2))
 # print(encrypt("012345", 1))
 # print(encrypt("012345", 2))
-print(decrypt("hsi  etTi sats!", 1))
-print(decrypt("s eT ashi tist!", 2))

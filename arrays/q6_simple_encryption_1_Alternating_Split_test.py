@@ -5,6 +5,7 @@ test_cases = {
     (tuple([1, 2, 2, 2, 3]), tuple([2])): [1, 3],
     (tuple("hsi  etTi sats!"), tuple([1])): "This is a test!",
     (tuple("s eT ashi tist!"), tuple([2])): "This is a test!",
+    (tuple("JK>~~pyb#}iI{T_AR_"), tuple([993])): "This is a test!",
 }
 
 
