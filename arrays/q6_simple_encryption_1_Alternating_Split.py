@@ -14,42 +14,61 @@
 #
 # If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
-
+# fails on maximum recursion
+# def decrypt(encrypted_text, n):
+#     if n == 0 or n < 0 or not encrypted_text:
+#         return encrypted_text
+#
+#     half = len(encrypted_text) // 2
+#     odd = encrypted_text[:half]
+#     print('odd', odd)
+#     even = encrypted_text[half:]
+#     print('even', even)
+#     combined = list(zip(even, odd))
+#     if len(even) > len(odd):
+#         combined.append(even[-1])
+#     print('combined', combined)
+#     flattened = [item for pair in combined for item in pair]
+#     encrypted_text = "".join(flattened)
+#     print('flattened', encrypted_text)
+#     return decrypt(encrypted_text, n - 1)
+#
+#
+# def encrypt(text, n):
+#     if n == 0 or n < 0 or not text:
+#         return text
+#
+#     odd = [x for i, x in enumerate(text) if i % 2 != 0]
+#     even = [x for i, x in enumerate(text) if i % 2 == 0]
+#     result = "".join(odd + even)
+#
+#     return encrypt(result, n - 1)
 def decrypt(encrypted_text, n):
-    if n == 0 or n < 0 or not encrypted_text:
+    if n <= 0 or not encrypted_text:
         return encrypted_text
 
-    half = len(encrypted_text) // 2
-    odd = encrypted_text[:half]
-    print('odd', odd)
-    even = encrypted_text[half:]
-    print('even', even)
-    combined = list(zip(even, odd))
-    if len(even) > len(odd):
-        combined.append(even[-1])
-    print('combined', combined)
-    flattened = [item for pair in combined for item in pair]
-    encrypted_text = "".join(flattened)
-    print('flattened', encrypted_text)
-    return decrypt(encrypted_text, n - 1)
+    length = len(encrypted_text)
+    for _ in range(n):
+        odd = encrypted_text[:length // 2]
+        even = encrypted_text[length // 2:]
+        encrypted_text = ''.join(i + j for i, j in zip(even, odd + ' '))
+    return encrypted_text.strip()
 
 
 def encrypt(text, n):
-    if n == 0 or n < 0 or not text:
+    if n <= 0 or not text:
         return text
 
-    odd = [x for i, x in enumerate(text) if i % 2 != 0]
-    even = [x for i, x in enumerate(text) if i % 2 == 0]
-    result = "".join(odd + even)
-
-    return encrypt(result, n - 1)
+    for _ in range(n):
+        text = text[1::2] + text[::2]
+    return text
 
 
-encrypt('JK>~~pyb#}iI{T_AR_', 993)
+# print(encrypt('JK>~~pyb#}iI{T_AR_', 993))
 
 # print(decrypt("hsi  etTi sats!", 1))
 # print(decrypt("s eT ashi tist!", 2))
-# print(decrypt("135024!", 1))
+print(decrypt("135024!", 1))
 # print(decrypt("304152", 2))
 # print(encrypt("012345", 1))
 # print(encrypt("012345", 2))

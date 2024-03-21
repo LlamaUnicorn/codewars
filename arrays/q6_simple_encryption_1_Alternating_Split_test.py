@@ -11,5 +11,5 @@ test_cases = {
 
 def test_decrypt():
     for (list_a, list_b), expected in test_cases.items():
-        result = decrypt(list(list_a), list(list_b))
+        result = decrypt(list(list_a), int(list_b))
         assert result == expected, f"Incorrect answer for \"{list_a, list_b}\""
