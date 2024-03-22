@@ -14,6 +14,8 @@
 #
 # If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
+
+
 # fails on maximum recursion
 # def decrypt(encrypted_text, n):
 #     if n == 0 or n < 0 or not encrypted_text:
@@ -33,6 +35,18 @@
 #     print('flattened', encrypted_text)
 #     return decrypt(encrypted_text, n - 1)
 #
+
+# [item for item1 in outer_array for item2 in inner_array]
+
+# [item for pair in combined for item in pair]
+#       ^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^
+# combined = [(1, 2), (3, 4), (5, 6)]
+# flattened = []
+# for pair in combined:  # outer loop
+#     for item in pair:  # inner loop
+#         flattened.append(item)
+
+
 #
 # def encrypt(text, n):
 #     if n == 0 or n < 0 or not text:
