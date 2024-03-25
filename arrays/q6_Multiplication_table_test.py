@@ -1,8 +1,4 @@
 from q6_Multiplication_table import multiplication_table
-
-import string
-from hypothesis.strategies import just, text, lists, integers
-
 from hypothesis import given, example, strategies as st
 
 test_cases = {

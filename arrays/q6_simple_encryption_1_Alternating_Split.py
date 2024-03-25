@@ -15,7 +15,6 @@
 # If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
 
-
 # fails on maximum recursion
 # def decrypt(encrypted_text, n):
 #     if n == 0 or n < 0 or not encrypted_text:
@@ -36,7 +35,7 @@
 #     return decrypt(encrypted_text, n - 1)
 #
 
-# [item for item1 in outer_array for item2 in inner_array]
+# [item2 for item1 in outer_array for item2 in inner_array]
 
 # [item for pair in combined for item in pair]
 #       ^^^^^^^^^^^^^^^^^^^^ ^^^^^^^^^^^^^^^^
