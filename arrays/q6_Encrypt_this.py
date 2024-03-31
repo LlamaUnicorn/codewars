@@ -14,7 +14,16 @@
 
 
 def encrypt_this(text):
-    pass
+    text = text.split()
+    result = ''
+    for char in text:
+        result += str(ord(char[0])) + (char[-1] + char[2:-1] + char[1] if len(char) > 2 else char[1:])
+        result += ' '
+    return result.strip()
 
 
-print(encrypt_this("Hello"))  # "72olle"
+# return ' '.join([str(ord(word[0])) + (word[-1] + word[2:-1] + word[1] if len(word) > 2 else word[1:]) for word in text.split()])
+
+# print(encrypt_this("Hello"))  # "72olle"
+# print(encrypt_this("hello world"))  # "104olle 119drlo"
+print(encrypt_this("A wise old owl lived in an oak"))  # "65 119esi 111dl 111lw 108dvei 105n ::n 111ka"
